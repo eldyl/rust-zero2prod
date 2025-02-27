@@ -72,13 +72,6 @@ async fn subscribe_returns_a_200_for_valid_form_data() {
     let app = spawn_app().await;
     let client = reqwest::Client::new();
 
-    // let configuration = get_configuration().expect("Failed to read configuration file.");
-    // let connection_string = configuration.database.connection_string();
-    // let mut connection = PgConnection::connect(&connection_string)
-    //     .await
-    //     .expect("Failed to connect to postgres.");
-    // let client = reqwest::Client::new();
-
     // Act
     let body = "name=le%20guin&email=ursula_le_guin%40gmail.com";
     let response = client
