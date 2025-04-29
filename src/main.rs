@@ -16,8 +16,7 @@ async fn main() -> std::io::Result<()> {
 
     // Connect to database
     let connection_pool =
-        PgPool::connect(configuration.database.connection_string().expose_secret())
-            .await
+        PgPool::connect_lazy(configuration.database.connection_string().expose_secret())
             .expect("Failed to connect to postgres.");
 
     // Set server address
